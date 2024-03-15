@@ -2,7 +2,10 @@
   "name": "playwright-automation-js",
   "version": "1.0.0",
   "description": "test automation with playwright js",
-  "scripts": {},
+  "scripts": {
+    "test": "playwright test",
+    "test-in-ui": "playwright test --ui"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/theskysound/playwright-automate-js.git"
