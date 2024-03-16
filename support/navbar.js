@@ -1,5 +1,6 @@
 import { expect } from "@playwright/test";
 import BasePage from "./basePage";
+import * as navBarElement from "../matchers/navbar";
 
 export class Navbar extends BasePage {
     
@@ -8,8 +9,8 @@ export class Navbar extends BasePage {
     }
 
     async logout() {
-        await this.click("button#react-burger-menu-btn");
-        await this.click("#logout_sidebar_link");
+        await this.click(navBarElement.openBurgerMenu);
+        await this.click(navBarElement.logoutLink);
     }
 
 }
