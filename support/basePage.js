@@ -3,7 +3,11 @@ import { expect } from '@playwright/test';
 export default class BasePage {
     constructor(page) {
         this.page = page;
-        this.locator = (locatorElement) => page.getByTestId(locatorElement);
+        this.locator = (locatorElement) => page.locator(locatorElement);
+    }
+
+    async getCurrentPageNavTitle() {
+        return await this.locator('#header_container > div.header_secondary_container > span').textContent();
     }
 
     async click(el) {
@@ -20,5 +24,9 @@ export default class BasePage {
 
     async toBeVisible(el) {
         await expect(this.locator(el)).toBeVisible();
+    }
+
+    async toHaveText(el, text) {
+        await expect(this.locator(el)).toHaveText(text);
     }
 }
