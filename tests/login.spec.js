@@ -13,9 +13,9 @@ test.describe('login', () => {
 
     test('validation of login page', async ({ page }) => {
         const loginPage = new Login(page);
-        await loginPage.toBeVisible("#user-name");
-        await loginPage.toBeVisible("#password");
-        await loginPage.toBeVisible("#login-button");
+        await loginPage.toBeVisible(loginElement.userNameInput);
+        await loginPage.toBeVisible(loginElement.passwordInput);
+        await loginPage.toBeVisible(loginElement.loginButton);
     });
 
     test('login with standart user', async ({ page }) => {
