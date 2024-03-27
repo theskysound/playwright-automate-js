@@ -13,4 +13,12 @@ export class Navbar extends BasePage {
         await this.click(navBarElement.logoutLink);
     }
 
+    async toHaveItemsInShoppingCart(count) {
+        expect(await this.locator(navBarElement.shoppingCartProductsCounter).textContent()).toEqual(count.toString());
+    }
+
+    async toNotHaveItemsInShoppingCart() {
+        expect(await this.locator(navBarElement.shoppingCartProductsCounter)).toBeEmpty();
+    }
+
 }
