@@ -32,7 +32,7 @@ test.describe('products page', () => {
         const product = new Products(page);
         await product.toHaveText(productElement.addToCartButton('add-to-cart-sauce-labs-backpack'), 'Add to cart');
         await product.addToCart('add-to-cart-sauce-labs-backpack');
-        await product.toHaveText(productElement.addToCartButton('add-to-cart-sauce-labs-backpack'), 'Remove');
+        await product.toHaveText(productElement.addToCartButton('remove-sauce-labs-backpack'), 'Remove');
     });
 
     test('add item to shopping cart', async ({ page }) => {
